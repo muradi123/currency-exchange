@@ -18,21 +18,17 @@ body{
     align-items: center;
     margin-top: 20px;
 }
-.crobxptgeiobvds{
-    margin-top: 20px;
-}
+
 .sittgfiueykwosi{
     font-size: 30px;
 }
 
 .bxbzspvcvcoillr{
-    margin-left: 230px;
+
     font-weight: bolder;
 }
 
-.tambkeygglneujs{
-    margin-left: 120px;
-}
+
 
 .gyfpyxmhmcpllye{
     width: 650px;
@@ -412,6 +408,22 @@ outline: none;
 .dvbakbohhy:hover{
     color: #1089ff;
 }
+.dvbakbohhy2{
+    display: none !important;
+    height: 30px !important;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    width: 63px;
+    letter-spacing: 0.1em;
+    color: blue;
+    cursor: pointer;
+    background-color: #90a4ae;
+}
+
+.dvbakbohhy2:hover{
+    color: #1089ff;
+}
 .dgsrbipams{
     display: block !important;
 }
@@ -420,9 +432,12 @@ outline: none;
 }
 
 .djttbbjuyc{
-    margin-top: 6px;
-    margin-left: -18px;
-    position: absolute;
+    height: 50px;
+    display: block;
+    padding: -10px;
+    /* padding-bottom: 20px; */
+    padding-top: 7px;
+    text-align: center;
 }
 
 .lpmczgnbnr{
