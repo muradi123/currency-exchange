@@ -66,6 +66,7 @@ $(".miyhwhxnaj li input").click(function () {
 let index3;
 
 $('.dvbakbohhy').click(function() {
+
   let objs = [];
 index3 =  $(this).parent().parent().parent().parent().index();
 $('.dvbakbohhy').eq(index3).removeClass('dgsrbipams');
@@ -89,7 +90,7 @@ chrome.storage.local.set({objVal:ts});
     let numb = result.txt;
     document.querySelector('.gyfpyxmhmcpllye').innerHTML = '<div class="dgnownlamlcnsjj"><div class="ugpvlpxayggfdln"></div><div class="sekbvoujtoswvbd"><span class="cmwnyoemtinmmaf">Base currency</span></div><div class="prycpqedgjhoqdb">Convert to</div><div class="hyxjejbqjtfkplr"></div></div>' + '<div>'+ JSON.parse(result.objVal) + '</div>';
     editDeleteSave();
-
+  
  
   let allUl = document.querySelectorAll('.ui-state-default');
   for(let i = 0; i < allUl.length ; i ++) { 
@@ -262,8 +263,22 @@ chrome.storage.onChanged.addListener(changes => {
 // only after reload
 
   
-  chrome.storage.local.get(['objVal', 'txt'], function(result) {
-
+  chrome.storage.local.get(['objVal', 'txt','premium'], function(result) {
+if(result.premium === 'true'){
+  $('.secrurity_key').css('display', 'none')
+  $('.tambkeygglneujs').text('You are on the premium version')
+  $('.email').text('You are right know on the premium version! Need support?  Email ')
+  $('.gyfpyxmhmcpllye').addClass('topmargin')
+  $(".miyhwhxnaj ").children().slice(5, 32).css('display', 'block')
+  $(".miyhwhxnaj ").children().slice(37, 64).css('display', 'block')
+  $(".miyhwhxnaj").children().slice(69, 96).css('display', 'block')
+  $(".miyhwhxnaj ").children().slice(101, 128).css('display', 'block')
+  $(".dvzowjifyb").children().slice(5, 32).css('display', 'block')
+  $(".dvzowjifyb").children().slice(37, 64).css('display', 'block')
+  $(".dvzowjifyb").children().slice(69, 96).css('display', 'block')
+  $(".dvzowjifyb").children().slice(101, 128).css('display', 'block')
+  addNew();
+}
     let objs = [];
     console.log(result.objVal);
     console.log(result.txt);
@@ -463,18 +478,50 @@ $( function() {
                      </li>
  `
  
+ function addNew(){
+  document.querySelector('.bsjavjekfp').addEventListener('click',function(){
+    console.log('works');
+    let main = document.querySelector('.ui-sortable');
+    main.innerHTML += newLi;
+    editDeleteSave();
+    let allU = document.querySelector('.ui-sortable');
+    let ts = JSON.stringify(allU.outerHTML);
+    chrome.storage.local.set({objVal:ts});
+  })
+ }
+
  
- document.querySelector('.bsjavjekfp').addEventListener('click',function(){
-   console.log('works');
-   let main = document.querySelector('.ui-sortable');
-   main.innerHTML += newLi;
-   editDeleteSave();
-
-   let allU = document.querySelector('.ui-sortable');
-   let ts = JSON.stringify(allU.outerHTML);
-   chrome.storage.local.set({objVal:ts});
-
- })
- 
-
-
+ console.log($(".miyhwhxnaj").children())
+ $(".miyhwhxnaj ").children().slice(5, 32).css('display', 'none')
+ $(".miyhwhxnaj ").children().slice(37, 64).css('display', 'none')
+ $(".miyhwhxnaj").children().slice(69, 96).css('display', 'none')
+ $(".miyhwhxnaj ").children().slice(101, 128).css('display', 'none')
+ $(".dvzowjifyb").children().slice(5, 32).css('display', 'none')
+ $(".dvzowjifyb").children().slice(37, 64).css('display', 'none')
+ $(".dvzowjifyb").children().slice(69, 96).css('display', 'none')
+ $(".dvzowjifyb").children().slice(101, 128).css('display', 'none')
+ $( ".key" ).click(function() {
+  //let rand = Math.floor(Math.random() * 2) + 1;
+  //console.log(rand)
+  let rand = $('.keyinput').val();
+  console.log(rand)
+  if(rand === 'INICX_63767'){
+    chrome.storage.local.set({premium: 'true'});
+    $(this).parent().css('display', 'none');
+    $('.tambkeygglneujs').text('You are on the premium version')
+    $('.email').text('You are right know on the premium version! Need support?  Email ')
+    $('.gyfpyxmhmcpllye').addClass('topmargin')
+    $(".miyhwhxnaj ").children().slice(5, 32).css('display', 'block')
+    $(".miyhwhxnaj ").children().slice(37, 64).css('display', 'block')
+    $(".miyhwhxnaj").children().slice(69, 96).css('display', 'block')
+    $(".miyhwhxnaj ").children().slice(101, 128).css('display', 'block')
+    $(".dvzowjifyb").children().slice(5, 32).css('display', 'block')
+    $(".dvzowjifyb").children().slice(37, 64).css('display', 'block')
+    $(".dvzowjifyb").children().slice(69, 96).css('display', 'block')
+    $(".dvzowjifyb").children().slice(101, 128).css('display', 'block')
+    addNew();
+  }
+  else{
+    console.log('second')
+  }
+});
