@@ -67,17 +67,15 @@ let index3;
 
 $('.dvbakbohhy').click(function() {
 
-  let objs = [];
+let objs = [];
 index3 =  $(this).parent().parent().parent().parent().index();
 $('.dvbakbohhy').eq(index3).removeClass('dgsrbipams');
 $('.zimpvyvzds').eq(index3).removeClass('uuuhuzxnpd');
 console.log(index3)
-if (index >= 0) {
 $('.jylzvkgxxk').eq(index3).removeClass( "xfunloppbp" );
 $('.cxvlaxyzlh').eq(index3).removeClass( "scptwsygwd" );
 $('.rpyeyrjzqb').eq(index3).removeClass( "xfunloppbp" );
 $('.kxbqmvmapu').eq(index3).removeClass( "scptwsygwd" );
-}
 let allU = document.querySelector('.ui-sortable');
 let ts = JSON.stringify(allU.outerHTML);
 chrome.storage.local.set({objVal:ts});
